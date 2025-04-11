@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   deeplink_x_platform_interface: ^0.0.4
+  url_launcher: ^6.1.0
   android_intent_plus: ^5.0.1
   appcheck: ^1.5.4+1
 

@@ -36,13 +36,6 @@ void main() {
 
   // Tests for unimplemented methods
   group('unimplemented methods', () {
-    test('launchUrl throws UnimplementedError', () {
-      expect(
-        () => launcherUtil.launchUrl(Uri.parse('https://example.com')),
-        throwsA(isA<UnimplementedError>()),
-      );
-    });
-
     test('launchApp throws UnimplementedError', () {
       expect(
         () => launcherUtil.launchApp('myapp://'),
@@ -58,5 +51,6 @@ void main() {
     });
   });
 
+  // TODO: UnitTests for url_launcher related methods
   // TODO: UnitTests for android_intent_plus related methods
 }

@@ -1,6 +1,7 @@
 import 'package:android_intent_plus/android_intent.dart';
 import 'package:appcheck/appcheck.dart';
 import 'package:deeplink_x_platform_interface/deeplink_x_platform_interface.dart';
+import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 /// A utility class for launching and checking Android applications.
 ///
@@ -46,9 +47,8 @@ class LauncherUtilAndroid extends LauncherUtilPlatform {
       ).launch();
 
   @override
-  Future<bool> launchUrl(final Uri uri) async {
-    throw UnimplementedError('launchUrl() not implemented on this platform.');
-  }
+  Future<bool> launchUrl(final Uri uri) async =>
+      url_launcher.launchUrl(uri, mode: url_launcher.LaunchMode.externalApplication);
 
   @override
   Future<void> launchApp(final String scheme) async {
