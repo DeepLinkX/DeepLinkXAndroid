@@ -1,3 +1,7 @@
+## 0.0.4
+
+Added missing registerWith method.
+
 ## 0.0.3
 
 Implemented launchUrl.
