@@ -1,6 +1,7 @@
 import 'package:android_intent_plus/android_intent.dart';
 import 'package:appcheck/appcheck.dart';
 import 'package:deeplink_x_platform_interface/deeplink_x_platform_interface.dart';
+import 'package:flutter/foundation.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 /// A utility class for launching and checking Android applications.
@@ -22,7 +23,14 @@ class LauncherUtilAndroid extends LauncherUtilPlatform {
   ///
   /// Parameters:
   /// - [appCheck]: Optional custom AppCheck instance for testing
-  LauncherUtilAndroid({final AppCheck? appCheck}) : _appCheck = appCheck ?? AppCheck();
+  LauncherUtilAndroid({
+    @visibleForTesting final AppCheck? appCheck,
+  }) : _appCheck = appCheck ?? AppCheck();
+
+  /// Registers this class as the default instance of [LauncherUtilAndroid].
+  static void registerWith() {
+    LauncherUtilPlatform.instance = LauncherUtilAndroid();
+  }
 
   /// AppCheck instance used for checking and launching apps
   final AppCheck _appCheck;

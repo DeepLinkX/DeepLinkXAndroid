@@ -1,12 +1,9 @@
-import 'package:android_intent_plus/android_intent.dart';
 import 'package:appcheck/appcheck.dart';
 import 'package:deeplink_x_android/deeplink_x_android.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockAppCheck extends Mock implements AppCheck {}
-
-class MockAndroidIntent extends Mock implements AndroidIntent {}
 
 void main() {
   late MockAppCheck mockAppCheck;
