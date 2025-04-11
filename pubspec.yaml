@@ -1,0 +1,25 @@
+name: deeplink_x_android
+description: "Android implementation of the deeplink_x plugin."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ">=3.1.0 <4.0.0"
+  flutter: ">=3.12.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  deeplink_x_platform_interface: 0.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  plugin:
+    implements: deeplink_x
+    platforms:
+      android:
+        dartPluginClass: LauncherUtilAndroid
