@@ -1,7 +1,8 @@
 name: deeplink_x_android
 description: "Android implementation of the deeplink_x plugin."
 version: 0.0.1
-homepage:
+
+repository: https://github.com/DeeplinkX/DeeplinkXAndroid
 
 environment:
   sdk: ">=3.1.0 <4.0.0"
@@ -10,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  deeplink_x_platform_interface: 0.0.4
+  deeplink_x_platform_interface: ^0.0.4
   android_intent_plus: ^5.0.1
   appcheck: ^1.5.4+1
 
