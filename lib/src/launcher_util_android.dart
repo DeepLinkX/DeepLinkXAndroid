@@ -36,10 +36,13 @@ class LauncherUtilAndroid extends LauncherUtilPlatform {
   final AppCheck _appCheck;
 
   @override
-  Future<bool> isAndroidAppInstalled(final String packageName) async => _appCheck.isAppInstalled(packageName);
+  Future<bool> isAppInstalledByPackageName(final String packageName) async => _appCheck.isAppInstalled(packageName);
 
   @override
-  Future<void> launchAndroidApp(final String packageName) async => _appCheck.launchApp(packageName);
+  Future<bool> launchAppByPackageName(final String packageName) async {
+    await _appCheck.launchApp(packageName);
+    return true;
+  }
 
   @override
   Future<void> launchIntent(final AndroidIntentOption options) async => AndroidIntent(
@@ -59,12 +62,12 @@ class LauncherUtilAndroid extends LauncherUtilPlatform {
       url_launcher.launchUrl(uri, mode: url_launcher.LaunchMode.externalApplication);
 
   @override
-  Future<void> launchApp(final String scheme) async {
+  Future<bool> launchAppByScheme(final String scheme) async {
     throw UnimplementedError('launchApp() not implemented on this platform.');
   }
 
   @override
-  Future<bool> isAppInstalled(final String scheme) async {
+  Future<bool> isAppInstalledByScheme(final String scheme) async {
     throw UnimplementedError('isAppInstalled() not implemented on this platform.');
   }
 }

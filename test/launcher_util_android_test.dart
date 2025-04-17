@@ -16,16 +16,16 @@ void main() {
 
   group('LauncherUtil', () {
     group('mockAppCheck integration', () {
-      test('isAndroidAppInstalled delegates to AppCheck', () async {
+      test('isAppInstalledByPackageName delegates to AppCheck', () async {
         when(() => mockAppCheck.isAppInstalled('com.example.app')).thenAnswer((final _) async => true);
-        final result = await launcherUtil.isAndroidAppInstalled('com.example.app');
+        final result = await launcherUtil.isAppInstalledByPackageName('com.example.app');
         expect(result, isTrue);
         verify(() => mockAppCheck.isAppInstalled('com.example.app')).called(1);
       });
 
-      test('launchAndroidApp delegates to AppCheck', () async {
+      test('launchAppByPackageName delegates to AppCheck', () async {
         when(() => mockAppCheck.launchApp('com.example.app')).thenAnswer((final _) async {});
-        await launcherUtil.launchAndroidApp('com.example.app');
+        await launcherUtil.launchAppByPackageName('com.example.app');
         verify(() => mockAppCheck.launchApp('com.example.app')).called(1);
       });
     });
@@ -33,16 +33,16 @@ void main() {
 
   // Tests for unimplemented methods
   group('unimplemented methods', () {
-    test('launchApp throws UnimplementedError', () {
+    test('launchAppByScheme throws UnimplementedError', () {
       expect(
-        () => launcherUtil.launchApp('myapp://'),
+        () => launcherUtil.launchAppByScheme('myapp://'),
         throwsA(isA<UnimplementedError>()),
       );
     });
 
-    test('isAppInstalled throws UnimplementedError', () {
+    test('isAppInstalledByScheme throws UnimplementedError', () {
       expect(
-        () => launcherUtil.isAppInstalled('myapp://'),
+        () => launcherUtil.isAppInstalledByScheme('myapp://'),
         throwsA(isA<UnimplementedError>()),
       );
     });
