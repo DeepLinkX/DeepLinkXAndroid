@@ -1,3 +1,7 @@
+## 0.1.0
+
+Updated deeplink_x_platform_interface to 0.1.0.
+
 ## 0.0.4
 
 Added missing registerWith method.
