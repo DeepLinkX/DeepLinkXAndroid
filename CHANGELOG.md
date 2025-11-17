@@ -1,3 +1,7 @@
+## 1.0.0
+
+Updated android_intent_plus plugin to 6.0.0 (Android 16KB page size support)
+
 ## 0.1.0
 
 Updated deeplink_x_platform_interface to 0.1.0.
