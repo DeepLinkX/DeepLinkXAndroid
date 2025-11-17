@@ -1,6 +1,6 @@
 name: deeplink_x_android
 description: "Android implementation of the deeplink_x plugin."
-version: 0.1.0
+version: 1.0.0
 
 repository: https://github.com/DeeplinkX/DeeplinkXAndroid
 
